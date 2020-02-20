@@ -1,0 +1,7 @@
+{
+  "JAVA_OPTIONS": "-Xmx1280m -Xss512k -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -XX:ReservedCodeCacheSize=64M -XX:CodeCacheMinimumFreeSpace=4M -XX:CompressedClassSpaceSize=32M -XX:MinMetaspaceExpansion=1M -XX:MaxMetaspaceExpansion=8M -XX:CodeCacheExpansionSize=256k",
+  "MEMORY_LIMIT": "1536Mi",
+  "CPU_LIMIT": "4",
+  "MEMORY_REQUEST": "1536Mi",
+  "CPU_REQUEST": "100m"
+}
