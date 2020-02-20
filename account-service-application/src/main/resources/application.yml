@@ -1,0 +1,58 @@
+server:
+  address: 0.0.0.0
+  port: 8080
+  compression:
+    enabled: true
+
+logging:
+  level:
+    org.springframework.web.reactive.DispatcherHandler: debug
+    com.serleonsolo.account: debug
+    org.springframework.web.reactive.function.client: trace
+    org.springframework.jdbc.core: trace
+  pattern:
+    console: "[%d{yyyy-MM-dd HH:mm:ss.SSS}][%p] %msg%n"
+
+spring:
+  profiles: development
+  cloud:
+    config:
+      enabled: false
+    zookeeper:
+      enabled: false
+      config:
+        enabled: false
+      discovery:
+        enabled: false
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    enabled: ${ZIPKIN_ENABLED:false}
+    baseUrl: http://localhost:9411/
+  datasource:
+    url: jdbc:postgresql://db:5433/postgres
+
+debug: true
+
+serleonsolo:
+  application:
+    security:
+      enabled: false
+  integration:
+    local-routing:
+      enabled: true
+
+apigateway:
+  routes:
+    registration:
+      enabled: false
+
+account:
+  install-database:
+    datasource:
+      server-name: db
+      user: postgres
+      password: Sergey03
+      schema: public
+      database-name: postgres
